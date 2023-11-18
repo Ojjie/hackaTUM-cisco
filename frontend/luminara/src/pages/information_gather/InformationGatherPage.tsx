@@ -15,14 +15,14 @@ function InformationGatherPage() {
 
   const messages = [
     {
-      message: `We are securely storing your data, and it is only visible for you! We will use it to give personalized recommendations for you!`,
+      message: `We are securely storing your data, and it is only visible for you!`,
       options: [
         "What is your yearly energy consumption in kilowatt-hours (kWh)?",
         "Can you tell me about your yearly heating consumption in kWh?",
       ],
     },
     {
-      message: `Starting with the basics about your household:`,
+      message: `We need some further information about your Household.`,
       options: [
         "How many people live in your household?",
         "What is the size of your home in square meters (if you're not sure, an estimate is fine)?",
@@ -78,9 +78,7 @@ function InformationGatherPage() {
         </div>
       ))}
       <button className="mt-8 btn btn-primary" onClick={nextClick}>
-        {messageNr === messages.length - 1
-          ? "I will ask your more later!"
-          : "Next"}
+        {messageNr === messages.length - 1 ? "Next" : "Next"}
       </button>
     </div>
   );

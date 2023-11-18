@@ -1,13 +1,34 @@
 import OpenAI from "openai";
 import { OPENAI_KEY } from "../secrets";
 
-const openai = new OpenAI({
-  apiKey: OPENAI_KEY, // defaults to process.env["OPENAI_API_KEY"]
+export const openai = new OpenAI({
+  apiKey: OPENAI_KEY,
+  dangerouslyAllowBrowser: true,
 });
 
-async function gather_data() {
-  const chatCompletion = await openai.chat.completions.create({
-    messages: [{ role: "user", content: "Say this is a test" }],
-    model: "gpt-3.5-turbo",
+export async function gatherLulu() {
+  const gatherAssistant = await openai.beta.assistants.retrieve(
+    "asst_c0Ob7JvWfeqpwfFfUqub7Wjw"
+  );
+
+  const thread = await openai.beta.threads.create();
+
+  const run = await openai.beta.threads.runs.create(thread.id, {
+    assistant_id: gatherAssistant.id,
+    //instructions: "Say Hi",
   });
+
+  return thread;
+}
+
+export async function sendMessage(thread_id: any, message: string) {
+  const messageObj = await openai.beta.threads.messages.create(thread_id, {
+    role: "user",
+    content: message,
+  });
+}
+
+export async function recieveMessage(thread_id: any) {
+  const messages = await openai.beta.threads.messages.list(thread_id);
+  return messages;
 }

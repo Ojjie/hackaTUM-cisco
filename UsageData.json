@@ -1,0 +1,25 @@
+{
+    "consumption": {
+        "yearly_energy_consumption": <kwh>,
+        "yearly_heating_consumption": <kwh>,
+        "yearly_water_consumption": <liters>,
+    },
+    "home_charactersistics": {
+        "square_footage": <square meters>,
+        "number_of_occupants": <integer>,
+        "type_of_heating_system": <string>,
+        "type_of_cooling_system": <boolean | string>,
+        "lighting_system": <energy_safe>,
+        "smart_devices": [<device_1>, <device_2>],
+        "special_energy_consumption": <p.e. Electric Car, heated pool etc.>,
+        "renewable_energy_adoption": <p.e. solar system, home battery>,
+    }, 
+    "behaviroal_data": {
+        "hot_showers": <boolean>,
+        "do_cooking": <boolean>,
+        "washing_machine": <boolean>,
+    },
+    "goals": {
+        "what_are_their_goals": [<goal_1>, <goal_2>],
+    }
+}

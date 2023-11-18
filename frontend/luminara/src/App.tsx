@@ -8,7 +8,6 @@ import AppRouter from "./Router";
 
 function App() {
   document.documentElement.setAttribute("data-theme", "light");
-
   return <AppRouter></AppRouter>;
 }
 

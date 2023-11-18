@@ -7,7 +7,7 @@ import LandingPage from "./pages/landingpage/LandingPage";
 import AppRouter from "./Router";
 
 function App() {
-  document.documentElement.setAttribute("data-theme", "light");
+  document.documentElement.setAttribute("data-theme", "corporate");
   return <AppRouter></AppRouter>;
 }
 

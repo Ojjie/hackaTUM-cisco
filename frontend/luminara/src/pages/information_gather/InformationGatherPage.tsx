@@ -1,11 +1,5 @@
 import { useEffect, useState } from "react";
 import lulu from "../../assets/lulu.jpeg";
-import {
-  gatherLulu,
-  openai,
-  recieveMessage,
-  sendMessage,
-} from "../../services/OpenAIService";
 import { useNavigate } from "react-router-dom";
 
 function InformationGatherPage() {
